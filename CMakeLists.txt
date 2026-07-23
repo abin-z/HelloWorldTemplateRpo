@@ -15,7 +15,11 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/build_output/lib) #
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/build_output/bin) # 动态库 (.so/.dll)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/build_output/bin) # 可执行文件
 
+include(CTest)
+
+add_subdirectory(3rd/fmt)
+add_subdirectory(3rd/doctest)
 
 add_subdirectory(module)
 add_subdirectory(application)
-add_subdirectory(3rd/fmt)
+add_subdirectory(test)
