@@ -12,13 +12,10 @@ file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.c src/*.cpp src/*.cc src/*.cxx
 target_sources(${tgt_name} PUBLIC ${headers}) # 头文件作为公共接口，供其他项目可见
 target_sources(${tgt_name} PRIVATE ${sources}) # 源文件仅供内部使用
 
-# 设置位置无关代码 (PIC)，对于动态库来说是必须的
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-
-target_include_directories(${tgt_name} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-set_target_properties(${tgt_name} PROPERTIES
-    CXX_STANDARD 17
-    CXX_STANDARD_REQUIRED YES
-    CXX_EXTENSIONS NO
+target_include_directories(${tgt_name}
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>
 )
+
+target_compile_features(${tgt_name} PUBLIC cxx_std_17)

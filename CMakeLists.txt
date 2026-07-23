@@ -3,6 +3,8 @@ project(HelloWorldTemplateRpo LANGUAGES C CXX)
 
 # 开启生成 compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+# 设置位置无关代码 (PIC)，对于动态库来说是必须的
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
