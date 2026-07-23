@@ -13,6 +13,7 @@ target_sources(${tgt_name} PRIVATE ${sources}) # 源文件仅供内部使用
 target_link_libraries(${tgt_name}
     PRIVATE
         my_module
+        fmt::fmt
 )
 
 target_compile_features(${tgt_name} PUBLIC cxx_std_17)

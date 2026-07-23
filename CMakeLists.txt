@@ -18,3 +18,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/build_output/bin) #
 
 add_subdirectory(module)
 add_subdirectory(application)
+add_subdirectory(3rd/fmt)
